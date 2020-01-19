@@ -9,57 +9,94 @@
 import Foundation
 import MapKit
 import UIKit
+import FirebaseFirestore
 import CoreLocation
 
 class MainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate {
     
+    
     @IBOutlet weak var mapView: MKMapView!
     
+    let db = Firestore.firestore()
+    
     let locationManager = CLLocationManager()
+    
+    var potholes: [Pothole] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.locationManager.requestAlwaysAuthorization()
-
+        
         // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
-
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
-        }
-
+        
+        locationManager.delegate = self
         mapView.delegate = self
         mapView.mapType = .standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-
-        if let coor = mapView.userLocation.location?.coordinate{
-            mapView.setCenter(coor, animated: true)
-        }
+        mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(.follow, animated: false)
         
+        loadPotholes()
+        
+        //test
+        //        let london = MKPointAnnotation()
+        //        london.title = "London"
+        //        london.coordinate = CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)
+        //        mapView.addAnnotation(london)
         
     }
     
-    //Updates to current location
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+    
+    func loadPotholes(){
+        
+        db.collection(K.FStore.collectionName)
+            .addSnapshotListener { (querySnapshot, error) in
+                
+                self.potholes = []
 
-        mapView.mapType = MKMapType.standard
-
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: locValue, span: span)
-        mapView.setRegion(region, animated: true)
-
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = locValue
-        annotation.title = "Current Location"
-        mapView.addAnnotation(annotation)
+                if let e = error {
+                    print("There was an issue retrieving data from Firestore. \(e)")
+                }
+                else {
+                    //reads data from firestore
+                    if let snapshotDocuments = querySnapshot?.documents {
+                        for doc in snapshotDocuments {
+                            let data = doc.data()
+                            //creates new pothole and adds to array
+                            if let locationSave = data[K.FStore.locationField] as? GeoPoint, let severitySave = data[K.FStore.severityField] as? Double, let commentsSave = data[K.FStore.commentField] as? [String]  {
+                                let newPothole = Pothole(location: locationSave, severity: severitySave, comments: commentsSave)
+                                self.potholes.append(newPothole)
+                            }
+                        }
+                    }
+                    
+                }
+                //adds pin where pothole is at
+                for pothole in self.potholes {
+                    let pHole = MKPointAnnotation()
+                    pHole.title = "Pothole"
+                    pHole.coordinate = CLLocationCoordinate2D(latitude: pothole.location.latitude, longitude: pothole.location.longitude)
+                    self.mapView.addAnnotation(pHole)
+                }
+        }
     }
-
-
-
-
+    
+    
+    //adds a point
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        return annotationView
+    }
 }
