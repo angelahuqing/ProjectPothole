@@ -23,4 +23,8 @@ class Pothole: Identifiable {
         self.comments = comments
     }
     
+    public func setSeverity(severity: Double){
+        self.severity = (self.severity + severity) / 2
+    }
+    
 }
