@@ -3,27 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		724134C9FDB1507E06F06A09 /* Pods_ProjectPothole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */; };
 		CFBFC21923D3B7A5003B1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */; };
 		CFBFC21B23D3B7A5003B1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */; };
-		CFBFC21D23D3B7A5003B1D06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21C23D3B7A5003B1D06 /* ViewController.swift */; };
+		CFBFC21D23D3B7A5003B1D06 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */; };
 		CFBFC22023D3B7A5003B1D06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBFC21E23D3B7A5003B1D06 /* Main.storyboard */; };
 		CFBFC22223D3B7A5003B1D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBFC22123D3B7A5003B1D06 /* Assets.xcassets */; };
 		CFBFC22523D3B7A5003B1D06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBFC22323D3B7A5003B1D06 /* LaunchScreen.storyboard */; };
+		CFBFC22D23D3C4D9003B1D06 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFBFC22C23D3C4D8003B1D06 /* GoogleService-Info.plist */; };
+		CFBFC23123D3CEFF003B1D06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F07EEFF67AB3E58E3EE49E3 /* Pods-ProjectPothole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectPothole.debug.xcconfig"; path = "Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole.debug.xcconfig"; sourceTree = "<group>"; };
+		B182EFBD72290A1EF611297F /* Pods-ProjectPothole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectPothole.release.xcconfig"; path = "Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole.release.xcconfig"; sourceTree = "<group>"; };
+		C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectPothole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBFC21523D3B7A5003B1D06 /* ProjectPothole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectPothole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CFBFC21C23D3B7A5003B1D06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		CFBFC21F23D3B7A5003B1D06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFBFC22123D3B7A5003B1D06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CFBFC22423D3B7A5003B1D06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFBFC22623D3B7A5003B1D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFBFC22C23D3C4D8003B1D06 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724134C9FDB1507E06F06A09 /* Pods_ProjectPothole.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094CEE03BA266EE6C175EF5A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F07EEFF67AB3E58E3EE49E3 /* Pods-ProjectPothole.debug.xcconfig */,
+				B182EFBD72290A1EF611297F /* Pods-ProjectPothole.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70128D75E54D8077635F77B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CFBFC20C23D3B7A5003B1D06 = {
 			isa = PBXGroup;
 			children = (
 				CFBFC21723D3B7A5003B1D06 /* ProjectPothole */,
 				CFBFC21623D3B7A5003B1D06 /* Products */,
+				094CEE03BA266EE6C175EF5A /* Pods */,
+				70128D75E54D8077635F77B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +86,13 @@
 			children = (
 				CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */,
 				CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */,
-				CFBFC21C23D3B7A5003B1D06 /* ViewController.swift */,
+				CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */,
 				CFBFC21E23D3B7A5003B1D06 /* Main.storyboard */,
+				CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */,
 				CFBFC22123D3B7A5003B1D06 /* Assets.xcassets */,
 				CFBFC22323D3B7A5003B1D06 /* LaunchScreen.storyboard */,
 				CFBFC22623D3B7A5003B1D06 /* Info.plist */,
+				CFBFC22C23D3C4D8003B1D06 /* GoogleService-Info.plist */,
 			);
 			path = ProjectPothole;
 			sourceTree = "<group>";
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFBFC22923D3B7A5003B1D06 /* Build configuration list for PBXNativeTarget "ProjectPothole" */;
 			buildPhases = (
+				BF1DE4FA712027ECC0781E29 /* [CP] Check Pods Manifest.lock */,
 				CFBFC21123D3B7A5003B1D06 /* Sources */,
 				CFBFC21223D3B7A5003B1D06 /* Frameworks */,
 				CFBFC21323D3B7A5003B1D06 /* Resources */,
+				72FAC49273008DAF71E9E210 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBFC22523D3B7A5003B1D06 /* LaunchScreen.storyboard in Resources */,
+				CFBFC22D23D3C4D9003B1D06 /* GoogleService-Info.plist in Resources */,
 				CFBFC22223D3B7A5003B1D06 /* Assets.xcassets in Resources */,
 				CFBFC22023D3B7A5003B1D06 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +166,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72FAC49273008DAF71E9E210 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF1DE4FA712027ECC0781E29 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProjectPothole-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFBFC21123D3B7A5003B1D06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBFC21D23D3B7A5003B1D06 /* ViewController.swift in Sources */,
+				CFBFC21D23D3B7A5003B1D06 /* StartScreenViewController.swift in Sources */,
 				CFBFC21923D3B7A5003B1D06 /* AppDelegate.swift in Sources */,
 				CFBFC21B23D3B7A5003B1D06 /* SceneDelegate.swift in Sources */,
+				CFBFC23123D3CEFF003B1D06 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +358,7 @@
 		};
 		CFBFC22A23D3B7A5003B1D06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F07EEFF67AB3E58E3EE49E3 /* Pods-ProjectPothole.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +377,7 @@
 		};
 		CFBFC22B23D3B7A5003B1D06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B182EFBD72290A1EF611297F /* Pods-ProjectPothole.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
