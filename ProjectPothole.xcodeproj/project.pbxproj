@@ -75,6 +75,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF3D900323D4C58100E5A743 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CFBFC23223D3D9E3003B1D06 /* Pothole.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF3D900423D4C59B00E5A743 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */,
+				CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */,
+				CF3D8FFF23D466E900E5A743 /* UpdateReportViewController.swift */,
+				CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */,
+				CF3D900123D46FF600E5A743 /* ExistingReportsViewController.swift */,
+				CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		CFBFC20C23D3B7A5003B1D06 = {
 			isa = PBXGroup;
 			children = (
@@ -98,14 +119,9 @@
 			children = (
 				CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */,
 				CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */,
-				CFBFC23223D3D9E3003B1D06 /* Pothole.swift */,
-				CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */,
-				CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */,
-				CF3D8FFF23D466E900E5A743 /* UpdateReportViewController.swift */,
-				CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */,
+				CF3D900323D4C58100E5A743 /* Models */,
+				CF3D900423D4C59B00E5A743 /* ViewControllers */,
 				CFBFC21E23D3B7A5003B1D06 /* Main.storyboard */,
-				CF3D900123D46FF600E5A743 /* ExistingReportsViewController.swift */,
-				CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */,
 				CFBFC23423D3ED22003B1D06 /* Constants.swift */,
 				CFBFC22123D3B7A5003B1D06 /* Assets.xcassets */,
 				CFBFC22323D3B7A5003B1D06 /* LaunchScreen.storyboard */,
