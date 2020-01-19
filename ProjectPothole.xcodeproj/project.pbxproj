@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		724134C9FDB1507E06F06A09 /* Pods_ProjectPothole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */; };
+		CF3D8FFC23D4181600E5A743 /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */; };
+		CF3D8FFE23D41EBC00E5A743 /* NewReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */; };
 		CFBFC21923D3B7A5003B1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */; };
 		CFBFC21B23D3B7A5003B1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */; };
 		CFBFC21D23D3B7A5003B1D06 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */; };
@@ -24,6 +26,8 @@
 		7F07EEFF67AB3E58E3EE49E3 /* Pods-ProjectPothole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectPothole.debug.xcconfig"; path = "Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole.debug.xcconfig"; sourceTree = "<group>"; };
 		B182EFBD72290A1EF611297F /* Pods-ProjectPothole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectPothole.release.xcconfig"; path = "Target Support Files/Pods-ProjectPothole/Pods-ProjectPothole.release.xcconfig"; sourceTree = "<group>"; };
 		C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectPothole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
+		CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReportViewController.swift; sourceTree = "<group>"; };
 		CFBFC21523D3B7A5003B1D06 /* ProjectPothole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectPothole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */,
 				CFBFC23223D3D9E3003B1D06 /* Pothole.swift */,
 				CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */,
+				CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */,
+				CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */,
 				CFBFC21E23D3B7A5003B1D06 /* Main.storyboard */,
 				CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */,
 				CFBFC23423D3ED22003B1D06 /* Constants.swift */,
@@ -219,11 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF3D8FFE23D41EBC00E5A743 /* NewReportViewController.swift in Sources */,
 				CFBFC21D23D3B7A5003B1D06 /* StartScreenViewController.swift in Sources */,
 				CFBFC23323D3D9E3003B1D06 /* Pothole.swift in Sources */,
 				CFBFC21923D3B7A5003B1D06 /* AppDelegate.swift in Sources */,
 				CFBFC21B23D3B7A5003B1D06 /* SceneDelegate.swift in Sources */,
 				CFBFC23123D3CEFF003B1D06 /* MainViewController.swift in Sources */,
+				CF3D8FFC23D4181600E5A743 /* ReportLocationViewController.swift in Sources */,
 				CFBFC23523D3ED22003B1D06 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
