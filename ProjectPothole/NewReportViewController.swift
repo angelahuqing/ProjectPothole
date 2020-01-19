@@ -51,11 +51,17 @@ class NewReportViewController: UIViewController{
     }
 
     @IBAction func submitButtonPressed(_ sender: Any) {
-        
-        if let locationSave = ReportLocationViewController.GlobalVariable.saveLocation, let severitySave = severitySelected, let commentSave = textView.text as Any? {
+        if (ratingLabel.text == "" || ratingLabel.text == "You must select a number")
+               {
+                   ratingLabel.text = "You must select a number"
+               }
+               else
+               {
+        if let locationSave = ReportLocationViewController.GlobalVariable.saveLocation, let severitySave = severitySelected, let encountersSave = 1 as Double?, let commentSave = textView.text as Any? {
             db.collection(K.FStore.collectionName).addDocument(data: [
                 K.FStore.locationField: locationSave,
                 K.FStore.severityField: severitySave,
+                K.FStore.encountersField: encountersSave,
                 K.FStore.commentField: FieldValue.arrayUnion([commentSave]),
             ]) { (error) in
                 if let e = error {
@@ -66,6 +72,11 @@ class NewReportViewController: UIViewController{
                     DispatchQueue.main.async {
                          self.textView.text = ""
                     }
+                    UIView.animate(withDuration: 0.1)
+                    {
+                        self.performSegue(withIdentifier: "endingReport", sender: self)
+                    }
+                }
                 }
             }
         }

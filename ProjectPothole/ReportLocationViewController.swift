@@ -14,6 +14,9 @@ class ReportLocationViewController: UIViewController,CLLocationManagerDelegate,M
     
     @IBOutlet weak var mapView: MKMapView!
     
+    // cone flag pic to replace marker
+    let coneFlag = UIImage(named: "cone_flag")
+    
     var decoder: CLGeocoder = CLGeocoder()
     var location: CLLocationCoordinate2D!
     
@@ -21,12 +24,14 @@ class ReportLocationViewController: UIViewController,CLLocationManagerDelegate,M
     
     struct GlobalVariable{
         static var saveLocation: GeoPoint!
+        static var existingPothole: Pothole!
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //creates annotation
         mapView.delegate = self
         mapView.showsUserLocation = true
         let annotation = MKPointAnnotation()
@@ -36,12 +41,41 @@ class ReportLocationViewController: UIViewController,CLLocationManagerDelegate,M
         if let location = location {
             mapView.setRegion(MKCoordinateRegion(center: location, span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)), animated: false)
         }
-        
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+        
+        var hasExistingPothole: Bool = false
+        
+        let range = 0.0001
+        
         GlobalVariable.saveLocation = GeoPoint(latitude: location.latitude, longitude: location.longitude)
-        //go to next screen as well
+        
+        let lat = GlobalVariable.saveLocation.latitude
+        
+        let lon = GlobalVariable.saveLocation.longitude
+        
+        for pothole in MainViewController.GlobalVariableMain.potholes{
+            
+            if(abs(pothole.location.latitude - lat) <= range) && (abs(pothole.location.longitude - lon) <= range){
+                hasExistingPothole = true
+                GlobalVariable.existingPothole = pothole
+                break;
+            }
+            else{
+                //is this necessary lol
+                hasExistingPothole = false
+            }
+        }
+      
+        if (hasExistingPothole == true)
+        {
+            UIView.animate(withDuration: 0.1)
+            {
+                self.performSegue(withIdentifier: "alreadyReported", sender: self)
+            }
+        }//segue into corresponding screen based on hasExistingPothole variable
+        
     }
 }
 

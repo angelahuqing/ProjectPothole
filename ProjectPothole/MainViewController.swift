@@ -21,11 +21,13 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDe
     
     let locationManager = CLLocationManager()
     
-    var potholes: [Pothole] = []
+    struct GlobalVariableMain {
+        static var saveLocation: GeoPoint!
+        static var potholes: [Pothole] = []
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.locationManager.requestAlwaysAuthorization()
         
@@ -37,16 +39,11 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDe
         mapView.mapType = .standard
         mapView.isZoomEnabled = true
         mapView.isScrollEnabled = true
-        mapView.showsUserLocation = true
-        self.mapView.setUserTrackingMode(.follow, animated: false)
         
         loadPotholes()
         
-        //test
-        //        let london = MKPointAnnotation()
-        //        london.title = "London"
-        //        london.coordinate = CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)
-        //        mapView.addAnnotation(london)
+        mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(.follow, animated: false)
         
     }
     
@@ -56,7 +53,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDe
         db.collection(K.FStore.collectionName)
             .addSnapshotListener { (querySnapshot, error) in
                 
-                self.potholes = []
+                GlobalVariableMain.potholes = []
 
                 if let e = error {
                     print("There was an issue retrieving data from Firestore. \(e)")
@@ -67,16 +64,15 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDe
                         for doc in snapshotDocuments {
                             let data = doc.data()
                             //creates new pothole and adds to array
-                            if let locationSave = data[K.FStore.locationField] as? GeoPoint, let severitySave = data[K.FStore.severityField] as? Double, let commentsSave = data[K.FStore.commentField] as? [String]  {
-                                let newPothole = Pothole(location: locationSave, severity: severitySave, comments: commentsSave)
-                                self.potholes.append(newPothole)
+                            if let IDSave = doc.documentID as? String, let locationSave = data[K.FStore.locationField] as? GeoPoint, let severitySave = data[K.FStore.severityField] as? Double, let encountersSave = data[K.FStore.encountersField] as? Double, let commentsSave = data[K.FStore.commentField] as? [String]  {
+                                let newPothole = Pothole(id: IDSave, location: locationSave, severity: severitySave, encounters: encountersSave, comments: commentsSave)
+                                GlobalVariableMain.potholes.append(newPothole)
                             }
                         }
                     }
-                    
                 }
                 //adds pin where pothole is at
-                for pothole in self.potholes {
+                for pothole in GlobalVariableMain.potholes {
                     let pHole = MKPointAnnotation()
                     pHole.title = "Pothole"
                     pHole.coordinate = CLLocationCoordinate2D(latitude: pothole.location.latitude, longitude: pothole.location.longitude)
