@@ -13,18 +13,24 @@ import FirebaseFirestore
 //TODO: equatable
 
 class Pothole: Identifiable {
+    
+    var id: String
     var location: GeoPoint
     var severity: Double
+    var encounters: Double
     var comments: [String]
     
-    init(location: GeoPoint, severity: Double, comments:[String]){
+    init(id: String, location: GeoPoint, severity: Double, encounters:Double, comments:[String]){
+        self.id = id
         self.location = location
         self.severity = severity
+        self.encounters = encounters
         self.comments = comments
     }
     
     public func setSeverity(severity: Double){
-        self.severity = (self.severity + severity) / 2
+        if (severity > 0){
+            self.severity = (self.severity + severity) / 2
+        }
     }
-    
 }

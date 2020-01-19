@@ -10,6 +10,8 @@
 		724134C9FDB1507E06F06A09 /* Pods_ProjectPothole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */; };
 		CF3D8FFC23D4181600E5A743 /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */; };
 		CF3D8FFE23D41EBC00E5A743 /* NewReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */; };
+		CF3D900023D466E900E5A743 /* UpdateReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D8FFF23D466E900E5A743 /* UpdateReportViewController.swift */; };
+		CF3D900223D46FF600E5A743 /* ExistingReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3D900123D46FF600E5A743 /* ExistingReportsViewController.swift */; };
 		CFBFC21923D3B7A5003B1D06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */; };
 		CFBFC21B23D3B7A5003B1D06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */; };
 		CFBFC21D23D3B7A5003B1D06 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */; };
@@ -28,6 +30,8 @@
 		C11714EDBB01C66EDB53B82B /* Pods_ProjectPothole.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectPothole.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
 		CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReportViewController.swift; sourceTree = "<group>"; };
+		CF3D8FFF23D466E900E5A743 /* UpdateReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateReportViewController.swift; sourceTree = "<group>"; };
+		CF3D900123D46FF600E5A743 /* ExistingReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistingReportsViewController.swift; sourceTree = "<group>"; };
 		CFBFC21523D3B7A5003B1D06 /* ProjectPothole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectPothole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBFC21823D3B7A5003B1D06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFBFC21A23D3B7A5003B1D06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 				CFBFC23223D3D9E3003B1D06 /* Pothole.swift */,
 				CFBFC21C23D3B7A5003B1D06 /* StartScreenViewController.swift */,
 				CF3D8FFB23D4181600E5A743 /* ReportLocationViewController.swift */,
+				CF3D8FFF23D466E900E5A743 /* UpdateReportViewController.swift */,
 				CF3D8FFD23D41EBB00E5A743 /* NewReportViewController.swift */,
 				CFBFC21E23D3B7A5003B1D06 /* Main.storyboard */,
+				CF3D900123D46FF600E5A743 /* ExistingReportsViewController.swift */,
 				CFBFC23023D3CEFF003B1D06 /* MainViewController.swift */,
 				CFBFC23423D3ED22003B1D06 /* Constants.swift */,
 				CFBFC22123D3B7A5003B1D06 /* Assets.xcassets */,
@@ -228,6 +234,8 @@
 				CF3D8FFE23D41EBC00E5A743 /* NewReportViewController.swift in Sources */,
 				CFBFC21D23D3B7A5003B1D06 /* StartScreenViewController.swift in Sources */,
 				CFBFC23323D3D9E3003B1D06 /* Pothole.swift in Sources */,
+				CF3D900223D46FF600E5A743 /* ExistingReportsViewController.swift in Sources */,
+				CF3D900023D466E900E5A743 /* UpdateReportViewController.swift in Sources */,
 				CFBFC21923D3B7A5003B1D06 /* AppDelegate.swift in Sources */,
 				CFBFC21B23D3B7A5003B1D06 /* SceneDelegate.swift in Sources */,
 				CFBFC23123D3CEFF003B1D06 /* MainViewController.swift in Sources */,

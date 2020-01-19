@@ -13,8 +13,10 @@ struct K {
     
     struct FStore {
         static let collectionName = "Potholes"
+        static let idField = "id"
         static let commentField = "comments"
         static let locationField = "location"
         static let severityField = "severity"
+        static let encountersField = "encounters"
     }
 }
