@@ -2,9 +2,7 @@
 //  MainViewController.swift
 //  ProjectPothole
 //
-//  Created by Natalia Luzuriaga on 1/18/20.
-//  Copyright © 2020 ucsbteam. All rights reserved.
-//
+
 
 import Foundation
 import MapKit
@@ -54,7 +52,7 @@ class MainViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDe
             .addSnapshotListener { (querySnapshot, error) in
                 
                 GlobalVariableMain.potholes = []
-
+                
                 if let e = error {
                     print("There was an issue retrieving data from Firestore. \(e)")
                 }

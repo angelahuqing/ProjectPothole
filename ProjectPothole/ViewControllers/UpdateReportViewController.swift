@@ -1,3 +1,8 @@
+//
+//  UpdateReportViewController.swift
+//  ProjectPothole
+//
+
 import Foundation
 import FirebaseFirestore
 import MapKit
@@ -18,10 +23,10 @@ class UpdateReportViewController: UIViewController{
         
         //saves existing pothole
         existingPothole = ReportLocationViewController.GlobalVariable.existingPothole
-
+        
         
         let keyboardDown = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-           view.addGestureRecognizer(keyboardDown)
+        view.addGestureRecognizer(keyboardDown)
     }
     
     @IBAction func button1PressedRereport(_ sender: Any) {
@@ -38,17 +43,17 @@ class UpdateReportViewController: UIViewController{
         severitySelected = 3
         reratingLabel.text = "3"
     }
-
+    
     @IBAction func button4PressedRereport(_ sender: Any) {
         severitySelected = 4
         reratingLabel.text = "4"
     }
-
+    
     @IBAction func button5PressedRereport(_ sender: Any) {
         severitySelected = 5
         reratingLabel.text = "5"
     }
-
+    
     // change within here to calculate the new average and severity level
     // add to database
     @IBAction func submiteButtonPressedRereport(_ sender: Any) {
@@ -74,7 +79,7 @@ class UpdateReportViewController: UIViewController{
                         print("Successfully saved data.")
                         
                         DispatchQueue.main.async {
-                             self.textViewRereport.text = ""
+                            self.textViewRereport.text = ""
                         }
                     }
                 }
@@ -84,8 +89,5 @@ class UpdateReportViewController: UIViewController{
                 self.performSegue(withIdentifier: "endReport", sender: self)
             }
         }
-        
-        
-
     }
 }
